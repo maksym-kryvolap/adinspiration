@@ -1,0 +1,234 @@
+@import "../utils//mixins";
+
+.footer {
+  padding: 48px 24px;
+  background-color: #0d0f11;
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  @include screen-lg {
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include screen-xl {
+    padding: 64px 112px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 32px;
+
+    @include screen-sm {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    @include screen-lg {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    @include screen-xl {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    &-logo {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 25.2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    &-items {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      @include screen-lg {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        justify-content: end;
+      }
+
+      @include screen-xl {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        justify-content: end;
+      }
+    }
+
+    &-link {
+      color: #b8c0cc;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.1px;
+      text-align: left;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #b8c0cc;
+        left: 0;
+        bottom: -2px;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.6s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &-links:not(:first-child) {
+      @include screen-lg {
+        margin-left: 32px;
+      }
+
+      @include screen-xl {
+        margin-left: 48px;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid #323a46;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include screen-lg {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include screen-xl {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-rights {
+      color: #b8c0cc;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.1px;
+      order: 2;
+      text-align: center;
+
+      @include screen-lg {
+        order: 0;
+        text-align: left;
+      }
+
+      @include screen-xl {
+        order: 0;
+        text-align: left;
+      }
+    }
+
+    &-items {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 32px;
+
+      @include screen-lg {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        justify-content: end;
+        margin-bottom: 0;
+      }
+
+      @include screen-xl {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        justify-content: end;
+        margin-bottom: 0;
+      }
+    }
+
+    &-link {
+      color: #b8c0cc;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.1px;
+      text-align: left;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #b8c0cc;
+        left: 0;
+        bottom: -2px;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.6s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &-links:not(:first-child) {
+      @include screen-lg {
+        margin-left: 32px;
+      }
+
+      @include screen-xl {
+        margin-left: 48px;
+      }
+    }
+  }
+}

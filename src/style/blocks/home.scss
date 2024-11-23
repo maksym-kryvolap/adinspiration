@@ -1,0 +1,216 @@
+@import "../utils/mixins";
+
+.home {
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 38px;
+    text-align: center;
+    max-width: 908px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include screen-lg {
+      font-size: 40px;
+      line-height: 56px;
+    }
+
+    @include screen-xl {
+      font-size: 40px;
+      line-height: 56px;
+    }
+  }
+
+  &__subtitle {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: center;
+    color: #323a46;
+    max-width: 908px;
+    width: 100%;
+    margin: 16px auto 32px;
+
+    @include screen-lg {
+      max-width: 908px;
+      width: 100%;
+      margin: 16px auto 56px;
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 16px;
+
+    @include screen-sm {
+      margin-right: -16px;
+    }
+    @include screen-md {
+      margin-right: -16px;
+    }
+    @include screen-lg {
+      margin-right: -16px;
+    }
+    @include screen-xl {
+      margin-right: -16px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    border: 1px solid #e7eaee;
+    border-radius: 21px;
+    height: 588px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    flex-grow: 0;
+
+    @include screen-sm {
+      flex: 1 1 calc(50% - 16px);
+      flex-grow: 0;
+    }
+
+    @include screen-md {
+      flex: 1 1 calc(33.3% - 16px);
+      flex-grow: 0;
+      height: 471px;
+    }
+
+    @include screen-lg {
+      flex: 1 1 calc(33.3% - 16px);
+      flex-grow: 0;
+      height: 471px;
+    }
+
+    @include screen-xl {
+      flex: 1 1 calc(25% - 16px);
+      flex-grow: 0;
+      height: 471px;
+    }
+
+    &:hover .home__item-overlay,
+    &:hover .home__item-button {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 48px;
+      bottom: 43px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 89px);
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    &-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #e7eaee;
+      border-radius: 24px;
+      cursor: pointer;
+      max-width: 180px;
+      width: 100%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      color: #64748b;
+      text-decoration: none;
+
+      &:hover {
+        background: #141414;
+        border: none;
+        color: #fff;
+      }
+
+      &--text {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.94px;
+      }
+    }
+
+    &--brand {
+      font-family: Inter;
+      font-size: 12.34px;
+      font-weight: 500;
+      line-height: 14.94px;
+      color: #141414;
+    }
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      &--title {
+        font-size: 10.29px;
+        font-weight: 500;
+        line-height: 12.45px;
+        color: #10b981;
+      }
+
+      &--btn {
+        background-color: #fff;
+        border: 1px solid #e7eaee;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 23px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border: 1px solid #adabab;
+        }
+      }
+    }
+
+    &-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 11px 0;
+      border-radius: 15px;
+      overflow: hidden;
+
+      &--image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
